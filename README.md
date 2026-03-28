@@ -1,6 +1,8 @@
 # proton
 
-## Türkçe
+[English](#english) | [Türkçe](#türkçe)
+
+## Türkçe {#türkçe}
 
 Uzay ortamında veri sıkıştırma ve hata düzeltme.
 
@@ -68,11 +70,13 @@ g++ -std=c++20 -O2 bitflip.cpp -o bitflip
 | Derin Uzay (Zırhlı) | -l 19 -b 1M -p 64 -i 64   | Yüksek          | Radyasyon / SEU hataları    |
 | Voyager (Ekstrem)   | -l 19 -b 1M -p 128 -i 128 | Maksimum        | Fiziksel medya parçalanması |
 
+### Lisans
+
+Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
+
 ---
 
-Bu proje [MIT Lisansı](LICENSE) altında lisanslıdır.
-
-## English
+## English {#english}
 
 Data compression and error correction for deep space.
 
@@ -139,5 +143,7 @@ g++ -std=c++20 -O2 bitflip.cpp -o bitflip
 | Safe Storage          | -l 15 -b 4M -p 32 -i 32   | Medium           | Disk corruption (Bit-rot) |
 | Deep Space (Shielded) | -l 19 -b 1M -p 64 -i 64   | High             | Radiation / SEU errors    |
 | Voyager (Extreme)     | -l 19 -b 1M -p 128 -i 128 | Maximum          | Physical media damage     |
+
+### License
 
 This project is licensed under the [MIT License](LICENSE).
