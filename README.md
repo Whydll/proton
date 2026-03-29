@@ -76,9 +76,10 @@ Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
 
 ---
 
+## English
+
 <details>
 <summary><b>Click to expand English version / İngilizce için tıklayın</b></summary>
-## English
 
 Data compression and error correction for deep space.
 
