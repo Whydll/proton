@@ -1,4 +1,4 @@
-# proton
+# ProtonByte
 
 [English](#english) | [Türkçe](#türkçe)
 
@@ -10,10 +10,10 @@ Bitflip aracı ile radyasyon kaynaklı bit hatalarını test edebilirsiniz.
 
 ### Derleme
 
-#### protonzip:
+#### protonbyte:
 
 ```
-g++ -std=c++20 -O2 main.cpp -lzstd -o protonzip
+g++ -std=c++20 -O2 main.cpp -lzstd -o protonbyte
 ```
 
 #### bitflip:
@@ -27,31 +27,31 @@ g++ -std=c++20 -O2 bitflip.cpp -o bitflip
 #### Maksimum güvenlik (daha az sıkıştırma, daha fazla CPU eforu, daha fazla tamir olasılığı)
 
 ```
-./protonzip c dosya.ext output.pz -l 19 -b 1048576 -p 128 -i 128 -v
+./protonbyte c dosya.ext output.pb -l 19 -b 1048576 -p 128 -i 128 -v
 ```
 
 #### Dengeli (sıkıştırma, CPU ve güvenlik dengesi)
 
 ```
-./protonzip c dosya.ext output.pz -l 9 -b 8388608 -p 16 -i 32 -v
+./protonbyte c dosya.ext output.pb -l 9 -b 8388608 -p 16 -i 32 -v
 ```
 
 #### Burst error korumalı
 
 ```
-./protonzip c dosya.ext output.pz -l 15 -b 2097152 -p 32 -i 255 -v
+./protonbyte c dosya.ext output.pb -l 15 -b 2097152 -p 32 -i 255 -v
 ```
 
 #### Geri açma
 
 ```
-./protonzip d output.pz -v
+./protonbyte d output.pb -v
 ```
 
 #### Base
 
 ```
-./protonzip c [GİRDİ] [ÇIKTI] -l [SEVİYE] -b [BLOK] -p [PARITY] -i [DERİNLİK]
+./protonbyte c [GİRDİ] [ÇIKTI] -l [SEVİYE] -b [BLOK] -p [PARITY] -i [DERİNLİK]
 ```
 
 ### Parametrelerin kısa özeti
@@ -63,12 +63,12 @@ g++ -std=c++20 -O2 bitflip.cpp -o bitflip
 
 ### Önerilen senaryolar
 
-| Senaryo             | Önerilen Komut            | Koruma Seviyesi | Hata Toleransı              |
-| ------------------- | ------------------------- | --------------- | --------------------------- |
-| Standart Arşiv      | -l 12 -b 1M -p 16 -i 8    | Düşük           | Küçük bit hataları          |
-| Güvenli Depolama    | -l 15 -b 4M -p 32 -i 32   | Orta            | Disk bozulmaları (Bit-rot)  |
-| Derin Uzay (Zırhlı) | -l 19 -b 1M -p 64 -i 64   | Yüksek          | Radyasyon / SEU hataları    |
-| Voyager (Ekstrem)   | -l 19 -b 1M -p 128 -i 128 | Maksimum        | Fiziksel medya parçalanması |
+| Senaryo          | Önerilen Komut                 | Koruma Seviyesi | Hata Toleransı              |
+| ---------------- | ------------------------------ | --------------- | --------------------------- |
+| Standart Arşiv   | -l 12 -b 1048576 -p 16 -i 8    | Düşük           | Küçük bit hataları          |
+| Güvenli Depolama | -l 15 -b 4194304 -p 32 -i 32   | Orta            | Disk bozulmaları (Bit-rot)  |
+| Zırhlı           | -l 19 -b 1048576 -p 64 -i 64   | Yüksek          | Radyasyon / SEU hataları    |
+| Ekstrem          | -l 19 -b 1048576 -p 128 -i 128 | Maksimum        | Fiziksel medya parçalanması |
 
 ### Lisans
 
@@ -79,7 +79,7 @@ Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
 ## English
 
 <details>
-<summary><b>Click to expand English version / İngilizce için tıklayın</b></summary>
+<summary><b>Click to expand English version</b></summary>
 
 Data compression and error correction for deep space.
 
@@ -104,25 +104,25 @@ g++ -std=c++20 -O2 bitflip.cpp -o bitflip
 #### Maximum security (less compression, more CPU effort, higher repair chance)
 
 ```
-./protonzip c file.ext output.pz -l 19 -b 1048576 -p 128 -i 128 -v
+./protonzip c file.ext output.pb -l 19 -b 1048576 -p 128 -i 128 -v
 ```
 
 #### Balanced (compression, CPU and security balance)
 
 ```
-./protonzip c file.ext output.pz -l 9 -b 8388608 -p 16 -i 32 -v
+./protonzip c file.ext output.pb -l 9 -b 8388608 -p 16 -i 32 -v
 ```
 
 #### Burst error protected
 
 ```
-./protonzip c file.ext output.pz -l 15 -b 2097152 -p 32 -i 255 -v
+./protonzip c file.ext output.pb -l 15 -b 2097152 -p 32 -i 255 -v
 ```
 
 #### Extraction
 
 ```
-./protonzip d output.pz -v
+./protonzip d output.pb -v
 ```
 
 #### Base
